@@ -3,6 +3,8 @@
         "iosfwd": "cpp",
         "vector": "cpp",
         "new": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "iostream": "cpp",
+        "map": "cpp"
     }
 }
