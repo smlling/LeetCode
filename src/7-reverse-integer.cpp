@@ -42,30 +42,46 @@ using namespace std;
 class Solution {
     public:
     int reverse(int x) {
-        bool positive               = x >= 0;
-        x                           = abs(x);
-        deque<int> num              = deque<int>();
-        int        mod              = x % 10;
-        int        power            = 1;
-        int        ans              = 0;
-        bool       possibleOverflow = false;
-        int        val              = 0;
+        // 是否为正书
+        bool positive = x >= 0;
+        x             = abs(x);
+        // 循环队列，用于记录每一位数字
+        deque<int> num = deque<int>();
+        // 最后一位数字
+        int mod = x % 10;
+        // 幂方数
+        int power = 1;
+        // 结果
+        int ans = 0;
+        // 是否可能溢出
+        bool possibleOverflow = false;
+        // 中间变量，用于存储当前操作的数字
+        int val = 0;
         x /= 10;
         num.push_back(mod);
+        // 循环将每一位数字放入队列
         while (x) {
             mod = x % 10;
             x /= 10;
             num.push_back(mod);
         }
 
+        // 如果位数为10位则反转后有可能产生溢出
         if (10 == num.size()) {
             possibleOverflow = true;
         }
 
+        // 从队列头部（对应x的最后一位数字）开始遍历
         while (!num.empty()) {
+            // 当前位的数字需要乘上10的幂方数
             power = num.size() - 1;
-            val   = num.front();
+            // 当前位数字的值
+            val = num.front();
+            // 判断溢出
             if (possibleOverflow) {
+                // 如果当某一位于最值的对应位相等则仍有溢出可能
+                // 如果小于则一定不会溢出，可以将可能溢出标志置为false，这样后续位的计算中就不需要再判断溢出了
+                // 如果大于则已经溢出，可以直接返回了
                 switch (num.size()) {
                     case 10:
                         if (val > 2) {
@@ -131,6 +147,7 @@ class Solution {
                         }
                         break;
                     case 1:
+                        // 注意正负数的最值最后一位不同
                         if ((positive && val > 7) || (!positive && val > 8)) {
                             return 0;
                         }
