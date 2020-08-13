@@ -18,7 +18,7 @@
     email:smlling@hotmail.com
     github:https://github.com/smlling
 
-    执行用时：740 ms, 在所有 C++ 提交中击败了5.18%的用户
+    执行用时：740 ms, 在所有 C++ 提交中击败了5.18%的用户(拉垮)
     内存消耗：7.5 MB, 在所有 C++ 提交中击败了60.23%的用户
 
 */
