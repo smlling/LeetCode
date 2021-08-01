@@ -5,6 +5,8 @@
         "new": "cpp",
         "algorithm": "cpp",
         "iostream": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "list": "cpp",
+        "tuple": "cpp"
     }
 }

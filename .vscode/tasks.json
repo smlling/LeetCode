@@ -3,7 +3,7 @@
         {
             "type": "shell",
             "label": "C/C++: g++ build active file",
-            "command": "/usr/bin/g++",
+            "command": "g++",
             "args": [
                 "-std=c++11",
                 "-g",
